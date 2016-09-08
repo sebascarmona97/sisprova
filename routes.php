@@ -13,13 +13,20 @@
 
 Route::get('/', function()
 {
-	return View::make('login');
+	return View::make('home');
 });
 
 Route::get('home', function()
 {
 	return View::make('home');
 });
+
+Route::get('usuarios', 'UsuarioController@mostrar');
+Route::post('usuarios', 'UsuarioController@guardar');
+Route::get('crearusuario', 'UsuarioController@formulario');
+Route::get('editarusuario/{id}', 'UsuarioController@obtener');
+Route::post('editarusuario/{id}', 'UsuarioController@actualizar');
+Route::get('eliminarprofesor/{id}', 'ProfesorController@eliminar');
 
 
    

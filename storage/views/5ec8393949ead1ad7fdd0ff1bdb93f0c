@@ -1,0 +1,93 @@
+<?php $__env->startSection('styles'); ?>
+	<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('contenido'); ?>
+	<h1>Crear Usuario</h1>
+	<hr>
+	<form method="POST" action="usuarios">
+		<div class="form-group">
+
+			<div class="col-md-6">
+					<label class="control-label">Foto: </label><br>
+					<input class="form-control" name="foto" required>
+
+					<br>
+
+					<label class="control-label">Nombre: </label><br>
+					<input class="form-control" name="nombre" placeholder="Digite el nombre del usuario*" required>
+				
+					<br>
+
+					<label class="control-label">Apellido: </label><br>
+					<input class="form-control" name="apellido" placeholder="Digite el apellido del usuario*" required>
+				
+					<br>
+			
+					<label class="control-label">Tipo documento: </label><br>
+					<select class="form-control" name="idtipo_documento">
+						<?php foreach($tipo_documentos as $tipo_documento): ?>
+							<option value="<?php echo $tipo_documento->id; ?>"><?php echo $tipo_documento->abreviatura; ?></option>
+						<?php endforeach; ?>
+					</select>
+
+					<br>
+
+					<label class="control-label">Numero de identidad: </label><br>
+					<input class="form-control" name="numero_identidad" type="number" 
+					placeholder="Digite el numero de identidad del usuario*" required>
+				
+					<br>
+
+					<label class="control-label">Huella: </label><br>
+					<input class="form-control" name="huella" required>
+			</div>
+
+			<div class="col-md-6">
+
+				<label class="control-label">Nombre usuario: </label><br>
+				<input class="form-control" name="NombreUsuario" 
+				placeholder="Digite un nombreUsuario*" required>
+			
+				<br>
+
+				<label class="control-label">Contraseña: </label><br>
+				<input class="form-control" name="password" 
+				placeholder="Digite una contraseña*" required>
+			
+				<br>
+
+				<label class="control-label">Centro: </label><br>
+					<select class="form-control" name="idcentro">
+						<?php foreach($centros as $centro): ?>
+							<option value="<?php echo $centro->id; ?>"><?php echo $centro->abreviatura; ?></option>
+						<?php endforeach; ?>
+					</select>
+
+				<br>
+
+				<label class="control-label">Tipo usuario: </label><br>
+					<select class="form-control" name="idtipo_usuario">
+						<?php foreach($tipo_usuarios as $tipo_usuario): ?>
+							<option value="<?php echo $tipo_usuario->id; ?>"><?php echo $tipo_usuario->nombre; ?></option>
+						<?php endforeach; ?>
+					</select>
+
+				<br>
+
+				<label class="control-label">Estado: </label><br>
+					<select class="form-control" name="idestado">
+						<?php foreach($estados as $estados): ?>
+							<option value="<?php echo $estados->id; ?>"><?php echo $estados->nombre; ?></option>
+						<?php endforeach; ?>
+					</select>
+			</div>		
+
+		</div>
+		<!-- <input type="submit" class="btn btn-success" value="Crear"> -->
+		<button type="submit" class="btn btn-success btn-lg pull-right boton">
+			<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> 
+		</button>
+	</form>
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
