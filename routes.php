@@ -28,6 +28,22 @@ Route::get('editarusuario/{id}', 'UsuarioController@obtener');
 Route::post('editarusuario/{id}', 'UsuarioController@actualizar');
 Route::get('eliminarprofesor/{id}', 'ProfesorController@eliminar');
 
+Route::get('operarios','operarioController@mostrar');
+Route::post('operarios', 'operarioController@guardar');
+
+
+Route::get('crearoperarios', 'operarioController@formulario');
+Route::get('editaroperario/{id}','operarioController@obtener');
+Route::post('editaroperario/{id}','operarioController@actualizar');
+
+
+Route::get('estados','estadoController@mostrar');
+
+Route::get('tipoUsuarios','tipousuarioController@mostrar');
+
+Route::get('tipoDocumento','tipodocumentoController@mostrar');
+
+
 
    
 

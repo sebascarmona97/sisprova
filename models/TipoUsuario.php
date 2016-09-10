@@ -1,9 +1,9 @@
 <?php
 
-class TipoUsuario extends Eloquent  {
+class TipoUsuario Extends Eloquent{
+	protected $table = 'tipo_usuario';
+	protected $fillable = array('id ','nombre','descripcion');
 
-	protected $table = 'tipo_usuarios';
-	protected $fillable = array('nombre', 'descripcion');
-
+	public $timestamps = false;
 
 }

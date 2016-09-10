@@ -1,9 +1,7 @@
 <?php
+	class Estado Extends Eloquent{
+		protected $table = 'estado';
+		protected $fillable = array('id','nombre');
 
-class Estado extends Eloquent  {
-
-	protected $table = 'estados';
-	protected $fillable = array('nombre');
-
-
-}
+		public $timestamps = false; 
+	}

@@ -1,9 +1,8 @@
 <?php
 
-class TipoDocumento extends Eloquent  {
+class Tipodocumento extends Eloquent{
+		protected $table = 'tipo_documento';
+		protected $fillable = array('id','descripcion','abreviatura');
 
-	protected $table = 'tipo_documentos';
-	protected $fillable = array('descripcion', 'abreviatura');
-
-
+		public $timestamps = false;
 }
